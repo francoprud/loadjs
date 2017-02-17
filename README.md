@@ -8,6 +8,8 @@ LoadJS
 provided by Sprockets. All your Javascript code will continue by minified in one Javascript file but
 some portions of it will only be executed for certain pages.
 
+*This version ONLY provides support for Turbolinks 5, removing the `$(document).ready(...)` function listener to `$(document).on('turbolinks:load', ...)` listener.*
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -21,7 +23,7 @@ And then execute:
 Or install it yourself as:
 
     $ gem install loadjs
-    
+
 ## Usage
 
 After installing the gem, you need to modify your `application.html.erb` and add the following attributes to the `body`
@@ -44,7 +46,7 @@ Then you need to require `loadjs` in your application manifest:
 //= require loadjs
 ```
 
-Finally if you want a block of code just to be excuted for a specific controller and action you must use the `load` 
+Finally if you want a block of code just to be excuted for a specific controller and action you must use the `load`
 function like this:
 
 ```javascript
@@ -54,7 +56,7 @@ load({controller: 'foo', action: 'bar'}, function (controller, action) {
 ```
 
 This piece of code will only be evaluated after the DOM has been loaded and only for the controller `foo` and action `bar`.
-If you want to execute a piece of code for all the actions in a controller you can omit the `action` option. 
+If you want to execute a piece of code for all the actions in a controller you can omit the `action` option.
 
 You can also use a shorter version like this:
 

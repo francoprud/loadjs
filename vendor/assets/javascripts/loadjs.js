@@ -1,5 +1,5 @@
 function load(options, fn) {
-  $(function(){
+  $(document).on('turbolinks:load', function () {
     var body = $("body");
     var currentController = body.data("controller");
     var currentAction = body.data("action");
